@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gezilecek Yerler - İstanbul'un Güzellikleri</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        #map {
+          height: 500px;
+          width: 100%;
+        }
+      </style>
+</head>
+
+<body class="bg-light">
+    <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top shadow-sm">
+        <div class="container">
+            <a class="navbar-brand" href="../index.html">İstanbul'un Güzellikleri</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html">Ana Sayfa</a>
+                    </li>
+                    <li class="nav-item"></li>
+                    <a class="nav-link" href="register.html">Kayıt</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown">
+                            Gezilecek Yerler
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="../places/ayasofya.html">Ayasofya Camii</a></li>
+                            <li><a class="dropdown-item" href="../places/topkapi.html">Topkapı Sarayı</a></li>
+                            <li><a class="dropdown-item" href="../places/sultanahmet.html">Sultanahmet Camii</a></li>
+                            <li><a class="dropdown-item" href="#galata">Galata Kulesi</a></li>
+                            <li><a class="dropdown-item" href="#dolmabahce">Dolmabahçe Sarayı</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item active" href="#">Daha Fazla ></a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">Hakkında</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div id="map"></div>
+
+    <!-- Harita API'sini çağır -->
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA-g4kAPji9Zi3YhGpaeprN_O2rGdDr6p&callback=initMap"
+      async
+      defer
+    ></script>
+    
+
+    <script>
+      function initMap() {
+        // Başlangıç konumu: İstanbul (örnek)
+        const konum = { lat: 41.0082, lng: 28.9784 };
+
+        // Haritayı oluştur
+        const harita = new google.maps.Map(document.getElementById("map"), {
+          zoom: 10,
+          center: konum,
+        });
+
+        // Bir işaretçi (marker) ekle
+        const marker = new google.maps.Marker({
+          position: konum,
+          map: harita,
+        });
+      }
+    </script>
+
+    <div class="container py-5 mt-5">
+        <div class="text-center mb-5">
+            <h1 class="display-4">İstanbul'da Gezilecek 20 Yer</h1>
+        </div>
+
+        <div class="row g-4">
+            <div class="col-md-6 col-lg-4" id="ayasofya">
+                <div class="card h-100 shadow-sm">
+                    <a href="../places/ayasofya.html" class="text-decoration-none text-dark">
+                        <img src="../pictures/ayasofya.jpg" class="card-img-top" alt="Ayasofya"
+                            style="height: 200px; object-fit: cover;">
+                        <div class="card-body">
+                            <h2 class="card-title h5">1. Ayasofya Cami</h2>
+                            <p class="card-text text-muted">Bizans ve Osmanlı İmparatorluklarına ev sahipliği yapmış,
+                                dünya tarihinin en önemli yapılarından biri.</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4" id="topkapi">
+                <div class="card h-100 shadow-sm">
+                    <a href="../places/topkapi.html" class="text-decoration-none text-dark">
+                        <img src="../pictures/topkapı.jpg" class="card-img-top" alt="Topkapı Sarayı"
+                            style="height: 200px; object-fit: cover;">
+                        <div class="card-body">
+                            <h2 class="card-title h5">2. Topkapı Sarayı</h2>
+                            <p class="card-text text-muted">Osmanlı padişahlarının 400 yıl boyunca yaşadığı ve devleti yönettiği muhteşem saray kompleksi.</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4" id="sultanahmet">
+                <div class="card h-100 shadow-sm">
+                    <a href="../places/sultanahmet.html" class="text-decoration-none text-dark">
+                        <img src="../pictures/sultanahmetcami.jpg" class="card-img-top" alt="Sultanahmet Camii"
+                            style="height: 200px; object-fit: cover;">
+                        <div class="card-body">
+                            <h2 class="card-title h5">3. Sultanahmet Cami</h2>
+                            <p class="card-text text-muted">Mavi çinileriyle ünlü, Osmanlı mimarisinin en güzel örneklerinden biri.</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4" id="galata">
+                <div class="card h-100 shadow-sm">
+                    <a href="../places/galata.html " class="text-decoration-none text-dark">
+                        <img src="../pictures/galatakulesi.jpg" class="card-img-top" alt="Galata Kulesi"
+                            style="height: 200px; object-fit: cover;">
+                        <div class="card-body">
+                            <h2 class="card-title h5">4. Galata Kulesi</h2>
+                            <p class="card-text text-muted">İstanbul'un en eski kulesi ve şehrin simgelerinden biri.</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4" id="dolmabahce">
+                <div class="card h-100 shadow-sm">
+                    <a href="../places/dolmabahce.html" class="text-decoration-none text-dark">
+                        <img src="../pictures/dolmabahçe.jpg" class="card-img-top" alt="Dolmabahçe Sarayı"
+                            style="height: 200px; object-fit: cover;">
+                        <div class="card-body">
+                            <h2 class="card-title h5">5. Dolmabahçe Sarayı</h2>
+                            <p class="card-text text-muted">Osmanlı'nın son dönem sarayı ve muhteşem Boğaz manzarasına
+                                sahip yapı.</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100 shadow-sm">
+                    <a href="../places/kapalicarsi.html" class="text-decoration-none text-dark">
+                        <img src="../pictures/kapalıçarşı.jpg" class="card-img-top" alt="Kapalı Çarşı"
+                            style="height: 200px; object-fit: cover;">
+                        <div class="card-body">
+                            <h2 class="card-title h5">6. Kapalı Çarşı</h2>
+                            <p class="card-text text-muted">Dünyanın en eski ve en büyük kapalı çarşılarından biri.</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100 shadow-sm">
+                    <a href="../places/yerebatan.html" class="text-decoration-none text-dark">
+                        <img src="../pictures/yerebatansarnıcı.jpg" class="card-img-top" alt="Yerebatan Sarnıcı"
+                            style="height: 200px; object-fit: cover;">
+                        <div class="card-body">
+                            <h2 class="card-title h5">7. Yerebatan Sarnıcı</h2>
+                            <p class="card-text text-muted">Bizans döneminden kalma, gizemli atmosferiyle büyüleyen tarihi su sarnıcı.</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100 shadow-sm">
+                    <a href="../places/suleymaniye.html" class="text-decoration-none text-dark">
+                        <img src="../pictures/süleymaniye.jpg" class="card-img-top" alt="Süleymaniye Camii"
+                            style="height: 200px; object-fit: cover;">
+                        <div class="card-body">
+                            <h2 class="card-title h5">8. Süleymaniye Cami</h2>
+                            <p class="card-text text-muted">Mimar Sinan'ın başyapıtı ve Osmanlı klasik dönem mimarisinin zirvesi.</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100 shadow-sm">
+                    <a href="../places/kizkulesi.html" class="text-decoration-none text-dark">
+                        <img src="../pictures/kızkulesi.jpg" class="card-img-top" alt="Kız Kulesi"
+                            style="height: 200px; object-fit: cover;">
+                        <div class="card-body">
+                            <h2 class="card-title h5">9. Kız Kulesi</h2>
+                            <p class="card-text text-muted">Üsküdar açıklarında, efsanelere konu olmuş tarihi deniz feneri.</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100 shadow-sm">
+                    <a href="../places/pierreloti.html" class="text-decoration-none text-dark">
+                        <img src="../pictures/pierloti.jpg" class="card-img-top" alt="Pierre Loti Tepesi"
+                            style="height: 200px; object-fit: cover;">
+                        <div class="card-body">
+                            <h2 class="card-title h5">10. Pierre Loti Tepesi</h2>
+                            <p class="card-text text-muted">Haliç'in muhteşem manzarasına sahip tarihi tepe.</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100 shadow-sm">
+                    <a href="../places/rumelihisari.html" class="text-decoration-none text-dark">
+                        <img src="../pictures/rumelihisari.jpg" class="card-img-top" alt="Rumeli Hisarı"
+                            style="height: 200px; object-fit: cover;">
+                        <div class="card-body">
+                            <h2 class="card-title h5">11. Rumeli Hisarı</h2>
+                            <p class="card-text text-muted">Fatih Sultan Mehmet tarafından yaptırılan, Boğaz'ınkoruyucusu tarihi kale.</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100 shadow-sm">
+                    <a href="../places/miniaturk.html" class="text-decoration-none text-dark">
+                        <img src="../pictures/miniaturk.jpg" class="card-img-top" alt="Miniatürk"
+                            style="height: 200px; object-fit: cover;">
+                        <div class="card-body">
+                            <h2 class="card-title h5">12. Miniatürk</h2>
+                            <p class="card-text text-muted">Türkiye'nin ve Osmanlı coğrafyasının önemli eserlerinin  minyatürlerinin sergilendiği park.</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100 shadow-sm">
+                    <a href="../places/eyupsultan.html" class="text-decoration-none text-dark">
+                        <img src="../pictures/eyupsultan.jpg" class="card-img-top" alt="Eyüp Sultan Camii"
+                            style="height: 200px; object-fit: cover;">
+                        <div class="card-body">
+                            <h2 class="card-title h5">13. Eyüp Sultan Camii</h2>
+                            <p class="card-text text-muted">İstanbul'un en kutsal mekanlarından biri ve önemli bir
+                                ziyaret noktası.</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100 shadow-sm">
+                    <a href="../places/taksim.html" class="text-decoration-none text-dark">
+                        <img src="../pictures/taksim.jpg" class="card-img-top" alt="Taksim Meydanı"
+                            style="height: 200px; object-fit: cover;">
+                        <div class="card-body">
+                            <h2 class="card-title h5">14. Taksim Meydanı</h2>
+                            <p class="card-text text-muted">Modern İstanbul'un kalbi ve şehrin en önemli buluşma noktası.</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100 shadow-sm">
+                    <a href="../places/istiklal.html" class="text-decoration-none text-dark">
+                        <img src="../pictures/istiklal.jpg" class="card-img-top" alt="İstiklal Caddesi"
+                            style="height: 200px; object-fit: cover;">
+                        <div class="card-body">
+                            <h2 class="card-title h5">15. İstiklal Caddesi</h2>
+                            <p class="card-text text-muted">Tarihi binaları, kültür sanat mekanları ve nostaljik  tramvayıyla ünlü yaya caddesi.</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100 shadow-sm">
+                    <a href="../places/ortakoy.html" class="text-decoration-none text-dark">
+                        <img src="../pictures/ortakoycami.jpg" class="card-img-top" alt="Ortaköy Camii"
+                            style="height: 200px; object-fit: cover;">
+                        <div class="card-body">
+                            <h2 class="card-title h5">16. Ortaköy Camii</h2>
+                            <p class="card-text text-muted">Boğaz'ın incisi, neo-barok tarzda inşa edilmiş zarif cami.
+                            </p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100 shadow-sm">
+                    <a href="../places/emirgan.html" class="text-decoration-none text-dark">
+                        <img src="../pictures/emirgan.jpg" class="card-img-top" alt="Emirgan Korusu"
+                            style="height: 200px; object-fit: cover;">
+                        <div class="card-body">
+                            <h2 class="card-title h5">17. Emirgan Korusu</h2>
+                            <p class="card-text text-muted">Lale festivaliyle ünlü, Boğaz'ın yeşil vahası.</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100 shadow-sm">
+                    <a href="../places/camlica.html" class="text-decoration-none text-dark">
+                        <img src="../pictures/camlica.jpg" class="card-img-top" alt="Çamlıca Tepesi"
+                            style="height: 200px; object-fit: cover;">
+                        <div class="card-body">
+                            <h2 class="card-title h5">18. Çamlıca Tepesi</h2>
+                            <p class="card-text text-muted">İstanbul'un en yüksek noktalarından biri ve muhteşem
+                                panoramik manzara.</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100 shadow-sm">
+                    <a href="../places/arkeoloji.html" class="text-decoration-none text-dark">
+                        <img src="../pictures/arkeoloji1.jpg" class="card-img-top" alt="Arkeoloji Müzesi"
+                            style="height: 200px; object-fit: cover;">
+                        <div class="card-body">
+                            <h2 class="card-title h5">19. Arkeoloji Müzesi</h2>
+                            <p class="card-text text-muted">Türkiye'nin en önemli müzelerinden biri ve zengin tarihi
+                                koleksiyonu.</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100 shadow-sm">
+                    <a href="../places/bogazturu.html" class="text-decoration-none text-dark">
+                        <img src="../pictures/bogazturu.jpg" class="card-img-top" alt="Boğaz Turu"
+                            style="height: 200px; object-fit: cover;">
+                        <div class="card-body">
+                            <h2 class="card-title h5">20. Boğaz Turu</h2>
+                            <p class="card-text text-muted">İstanbul Boğazı'nın eşsiz güzelliklerini tekne turuyla keşfetme deneyimi.</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="bg-dark text-white text-center py-3 mt-5">
+        <p id="visitorCountText">Yükleniyor...</p>
+        <p class="mb-0">&copy; 2024 İstanbul'un Güzellikleri. Tüm hakları saklıdır.</p>
+    </footer>
+
+    <script src="../js/visitors.js"></script>
+    <script src="../js/script.js"></script>
+
+</body>
+
+</html>
